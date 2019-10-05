@@ -4,7 +4,7 @@
 using namespace std;
 #define INF INT_MAX
 
-//Su complejidad es O^2
+//Este algoritmo fue diseñado utilizando ideas de la progaramación ávida en la función de minimizado, ya que se toman mínimos locales y se utilizan como heurística para calcular el arreglo 'optimo.'
 int printSolution (int p[], int n);
 
 void solveWordWrap (int l[], int n, int M)
@@ -47,7 +47,7 @@ void solveWordWrap (int l[], int n, int M)
                 }
         }
 
-        // Optimizar costo al mínimo posible
+        // Optimizar costo al mínimo posible: función de optimización
         c[0] = 0;
         for (j = 1; j <= n; j++)
         {

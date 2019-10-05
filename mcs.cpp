@@ -8,6 +8,7 @@ public:
 string a;
 string b;
 
+//Este algoritmo se programó usando programación dinámica, dada la estructura del problema que podía ser simplificado hasta una serie de comparaciones entre caracteres-
 int mcsComp (int sizea, int sizeb,int count)
 {
         if(sizea==0 || sizeb==0)
@@ -33,6 +34,7 @@ int main(int argc, char const *argv[]) {
         int asize,bsize;
         int resp;
         char mcs;
+
         driver.a="stringcmp";
         driver.b= "strosencmp";
 

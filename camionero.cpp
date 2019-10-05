@@ -8,6 +8,7 @@
 #include <string>
 using namespace std;
 
+//El algoritmo fue hecho usando programación ávida, con función de optimización local, pero sin una función de comprobación.
 class Gasolinera
 {
 public:
@@ -74,7 +75,7 @@ std::vector<Gasolinera> recorrido(Gasolinera st[], int kilometraje, int distTot)
         Gasolinera temp;
         std::vector<Gasolinera> resultados;
         int cont= 0;
-        while (distTot>0) {
+        while (distTot>kilometraje) {
                 temp= traslado(st,kilometraje);
                 resultados.push_back(temp);
 
@@ -97,8 +98,10 @@ std::vector<Gasolinera> recorrido(Gasolinera st[], int kilometraje, int distTot)
 // ordenar distancias de mayor a menor, encontrar la distancia mas grande a la que pueda llegar sin detenerse, sin eliminar a las que quedaron atras (innecesario) restar distancia recorrida a las restantes (una por una, resta durante la comparacion) y repetir hasta que no queden mas o la distancia al objetivo sea 0.
 int main(int argc, char const *argv[]) {
         std::vector<Gasolinera> resultados;
+
+        //Valores de prueba. Actualmente no se puede llegar al destino porque la distancia al destino es mayor que la gas más lejana + el kilometraje. Si la distancia de viaje se reduce a 280 funciona.
         int kilometraje=90;
-        int distanciaViaje=880;
+        int distanciaViaje=290;
         Gasolinera g4;
         g4=  Gasolinera(220,"A");
         Gasolinera g3;
@@ -126,6 +129,7 @@ int main(int argc, char const *argv[]) {
         for (size_t i = 0; i < resultados.size(); i++) {
                 std::cout<< resultados[i].nombre << " ";
         }
+        cout << "\n";
 
         cout << "El algoritmo tiene complejidad n^2 en el peor caso";
 

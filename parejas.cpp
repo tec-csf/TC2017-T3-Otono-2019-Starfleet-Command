@@ -11,7 +11,7 @@ typedef vector<string> PrefList;
 typedef map<string, PrefList> PrefMap;
 typedef map<string, string> Couples;
 
-
+//Este algoritmo fue diseñado usando la programación ávida, porque cada persona quiere tomar la mejor decisión posible, sin necesidad de información de las decisiones de otros (aparte de checar si la mejor opción está disponible)
 class parejas
 {
 public:
@@ -96,6 +96,7 @@ bool checaEstable(Couples parejas, PrefMap prefH, PrefMap prefM) //Funcion de ch
 
 //Los mapas tienen en la columna 0 los nombres de las personas cuyas preferencias se muestran: habran hombres en el mapa de preferencia de hombres.
 
+// Si se necesita modificar algo sería aqui. El main es usado para que los arreglos bidimensionales no sean espantosos para pasar a una funcion.
 const char *men_data[][11] = {
         { "Jose",  "Sam","Ana","Rebecca","Xochitl","Arantza","Tamara","Melissa","Aurora","Ursula","Izma" },
         { "Luis",  "Rebecca","Ursula","Sam","Tamara","Ana","Melissa","Aurora","Arantza","Xochitl","Izma" },
